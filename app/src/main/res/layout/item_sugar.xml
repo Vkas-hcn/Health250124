@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <FrameLayout
+        android:layout_marginVertical="6dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="match_parent"
+            app:strokeColor="@color/black"
+            android:padding="1dp"
+            android:background="@color/white"
+            app:strokeWidth="1dp"
+            app:shapeAppearance="@style/corner24"
+            android:layout_height="match_parent"></com.google.android.material.imageview.ShapeableImageView>
+
+        <TextView
+            android:background="@drawable/r12"
+            android:backgroundTint="#BFFFC7"
+            android:id="@+id/title"
+            android:text="Normal"
+            android:paddingVertical="4dp"
+            android:paddingHorizontal="12dp"
+            android:textSize="16sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp"
+            android:drawableStart="@mipmap/icon_blood"
+            android:drawableTint="#FF222222"
+            android:textStyle="bold"
+            android:textColor="#FF222222"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+        
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="56dp"
+            android:background="@android:color/transparent"
+            android:layout_gravity="end"
+            android:id="@+id/edit"
+            android:src="@mipmap/icon_edit"
+            android:layout_height="56dp"></androidx.appcompat.widget.AppCompatImageButton>
+
+        <ImageView
+            android:background="#1A000000"
+            android:layout_marginTop="52dp"
+            android:layout_marginHorizontal="12dp"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"></ImageView>
+
+        <TextView
+            android:drawableStart="@mipmap/icon_cloack"
+            android:id="@+id/time"
+            tools:text="2023-08-01 10:56"
+            android:layout_gravity="center_horizontal"
+            android:drawablePadding="8dp"
+            android:textSize="14sp"
+            android:layout_marginTop="66dp"
+            android:textColor="#999999"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <LinearLayout
+            android:layout_marginTop="97dp"
+            android:layout_width="match_parent"
+            android:backgroundTint="#FFF6F9F9"
+            android:background="@drawable/r20"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="12dp"
+            android:layout_marginHorizontal="12dp"
+            android:orientation="horizontal"
+            android:layout_height="60dp">
+
+            <LinearLayout
+                android:layout_marginStart="16dp"
+                android:background="@drawable/r20"
+                android:backgroundTint="#000"
+                android:gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp">
+                <ImageView
+                    android:layout_marginStart="12dp"
+                    android:src="@mipmap/i_opt0"
+                    android:id="@+id/stateIv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></ImageView>
+                <TextView
+                    android:text="Before meals"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="12dp"
+                    android:id="@+id/stateTv"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></TextView>
+            </LinearLayout>
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:textStyle="bold"
+                android:layout_marginEnd="4dp"
+                android:id="@+id/vale"
+                android:gravity="end"
+                android:textColor="#FF222222"
+                tools:text="100"
+                android:textSize="22sp"
+                android:layout_height="wrap_content"></TextView>
+
+            <TextView
+                android:id="@+id/unitTv"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:layout_marginEnd="16dp"
+                android:textColor="#FFBBD3D3"
+                tools:text="mg/dl"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"></TextView>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    
+    
+</FrameLayout>

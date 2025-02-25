@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".ui.press.PressureFragment">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp">
+        <TextView
+            android:text="Setting"
+            android:textSize="28dp"
+            android:layout_marginStart="20dp"
+            android:layout_gravity="center_vertical"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:drawableTop="@mipmap/setup_image"
+            android:textSize="12sp"
+            android:id="@+id/verTv"
+            android:textColor="#222222"
+            android:layout_marginTop="46dp"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:text="1.0"
+            android:gravity="center_horizontal"
+            android:drawablePadding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></TextView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:background="@drawable/r12"
+            android:layout_marginTop="184dp"
+            android:backgroundTint="#F6F9F9"
+            android:id="@+id/privacy"
+            android:text="Privacy Policy"
+            android:paddingStart="16dp"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:paddingEnd="16dp"
+            android:textColor="#222222"
+            android:layout_marginHorizontal="20dp"
+            android:drawableEnd="@mipmap/arrow_right"
+            android:layout_height="56dp"></androidx.appcompat.widget.AppCompatTextView>
+
+    </FrameLayout>
+
+</LinearLayout>
