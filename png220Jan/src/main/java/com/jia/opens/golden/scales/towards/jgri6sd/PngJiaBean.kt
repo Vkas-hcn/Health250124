@@ -9,6 +9,7 @@ data class PngJiaBean(
     val resources: Resources
 )
 
+@Keep
 data class AppConfig(
     val dataSync: Boolean,
     val exposure: Exposure,
@@ -16,31 +17,37 @@ data class AppConfig(
     val userTier: Int
 )
 
+@Keep
 data class Network(
     val h5Config: H5Config
 )
 
+@Keep
 data class Resources(
     val delayRange: String,
     val identifiers: Identifiers
 )
 
+@Keep
 data class Exposure(
     val interactions: Int,
     val limits: String
 )
 
+@Keep
 data class Timing(
     val checks: String,
     val failure: Int
 )
 
+@Keep
 data class H5Config(
     val gateways: List<String>,
     val hp: String,
     val ttl: Int
 )
 
+@Keep
 data class Identifiers(
     val internal: String,
     val social: String

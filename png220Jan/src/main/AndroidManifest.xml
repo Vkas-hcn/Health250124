@@ -33,14 +33,14 @@
             android:exported="true"
             android:syncable="true">
             <meta-data
-                android:name="@string/vfj_54r"
+                android:name="@string/png_fjir"
                 android:value="true" />
             <meta-data
-                android:name="@string/vfj_55r"
-                android:value="gt" />
+                android:name="@string/png_wwx"
+                android:value="gtdas" />
             <meta-data
-                android:name="@string/dfku"
-                android:value="ce" />
+                android:name="@string/png_ces"
+                android:value="cece" />
         </provider>
 
         <service android:name=".zvki6r.fie3h.PngTwoFService" />
@@ -94,19 +94,19 @@
         </receiver>
 
         <activity
-            android:name=".acc.BulletsActivity"
+            android:name=".acc.PjActivity"
             android:excludeFromRecents="true"
             android:exported="false"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="singleTask"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/TransparentTheme" />
         <activity
-            android:name=".acc.HFActivity"
+            android:name=".acc.NwtActivity"
             android:launchMode="singleTop" />
         <activity
             android:name="com.applovin.adview.AppLovinFullscreenActivity"
@@ -115,11 +115,11 @@
             android:exported="false"
             android:finishOnCloseSystemDialogs="true"
             android:hardwareAccelerated="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="singleTop"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="behind"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
@@ -128,10 +128,10 @@
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden" />
 
         <!-- Hybrid Ad Activities -->
@@ -140,10 +140,10 @@
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
@@ -151,10 +151,10 @@
             android:configChanges="fontScale|keyboard|keyboardHidden|locale|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
@@ -164,11 +164,11 @@
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
             android:hardwareAccelerated="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="singleTop"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden" />
 
 
@@ -179,10 +179,10 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
@@ -190,10 +190,10 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
@@ -202,11 +202,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_landing_page" />
         <activity
@@ -214,11 +214,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_landing_page" />
         <activity
@@ -226,33 +226,33 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_landing_page" />
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTDelegateActivity"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
             android:name="com.bytedance.sdk.openadsdk.activity.TTWebsiteActivity"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_privacy_landing_page" />
@@ -263,11 +263,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_app_open_ad_no_animation" />
         <activity
@@ -275,11 +275,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_new" />
         <activity
@@ -287,11 +287,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_new" />
         <activity
@@ -299,11 +299,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_new" />
         <activity
@@ -311,11 +311,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_new" />
         <activity
@@ -323,11 +323,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_interaction" />
         <activity
@@ -335,11 +335,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_interaction" />
         <activity
@@ -347,11 +347,11 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:launchMode="standard"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/tt_full_screen_new" />
 
@@ -361,10 +361,10 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/mbridge_transparent_common_activity_style" />
         <!-- integration rewardVideo if aggregation nativeX pls add start -->
@@ -373,10 +373,10 @@
             android:name="com.mbridge.msdk.out.LoadingActivity"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden" />
         <!-- integration rewardVideo if aggregation nativeX pls add end -->
         <activity
@@ -384,10 +384,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <activity
@@ -395,10 +395,10 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
 
@@ -407,10 +407,10 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/MonetizationAdsInternal.AdActivity" />
 
@@ -420,10 +420,10 @@
             android:excludeFromRecents="true"
             android:exported="false"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/DebugPanelTheme" />
 
@@ -432,10 +432,10 @@
             android:name="sg.bigo.ads.ad.splash.AdSplashActivity"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme" />
@@ -443,10 +443,10 @@
             android:name="sg.bigo.ads.ad.splash.LandscapeAdSplashActivity"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="landscape"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme" />
@@ -457,10 +457,10 @@
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
             android:hardwareAccelerated="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.NoTitleBar"
             tools:ignore="UnusedAttribute" />
@@ -469,10 +469,10 @@
             android:name="sg.bigo.ads.controller.form.AdFormActivity"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:taskAffinity="jia.opens.golden"
             android:windowSoftInputMode="adjustPan" />
         <activity
@@ -480,10 +480,10 @@
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
@@ -493,10 +493,10 @@
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@style/TransparentDialog"
@@ -506,10 +506,10 @@
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Holo.Light.Dialog.NoActionBar"
@@ -519,10 +519,10 @@
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="landscape"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
@@ -532,10 +532,10 @@
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
@@ -545,10 +545,10 @@
             android:configChanges="orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="landscape"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.Holo.Light.NoActionBar"
@@ -558,10 +558,10 @@
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:excludeFromRecents="true"
             android:finishOnCloseSystemDialogs="true"
-            android:icon="@drawable/show_can_t"
+            android:icon="@drawable/ces_show"
             android:label="@string/str"
             android:noHistory="true"
-            android:roundIcon="@drawable/show_can_t"
+            android:roundIcon="@drawable/ces_show"
             android:screenOrientation="portrait"
             android:taskAffinity="jia.opens.golden"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />

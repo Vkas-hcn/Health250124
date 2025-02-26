@@ -1,5 +1,7 @@
 package com.jia.opens.golden.scales.towards.zsdk5f;
 
+import android.util.Log;
+
 import androidx.annotation.Keep;
 
 /**
@@ -11,9 +13,9 @@ public class A76fef {
 
 //    static {
 //        try {
-//            System.loadLibrary("UxrQaLi");
+//            System.loadLibrary("DQVAXV");
 //        } catch (Exception e) {
-//
+//            Log.e("TAG", "static initializer: DQVAXV"+e.getMessage());
 //        }
 //    }
 	////注意:透明页面的onDestroy方法加上: (this.getWindow().getDecorView() as ViewGroup).removeAllViews()

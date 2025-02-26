@@ -1,12 +1,10 @@
 -keep class com.jia.opens.golden.scales.towards.zsdk5f.ZJiaPng { *; }
--keep class com.jia.opens.golden.scales.towards.zvki6r.gggtur5da.PngTwoSCReceiver { *; }
--keep class com.jia.opens.golden.scales.towards.zvki6r.gggtur5da.PngTwoWReceiver { *; }
 -keep class com.jia.opens.golden.scales.towards.zvki6r.gggtur5da.PngTwoMRecent { *; }
 
 -keep class com.jia.opens.golden.scales.towards.zsdk5f.A76fef { *; }
--keep class com.jia.opens.golden.scales.towards.zsdk5f.Ccan7t { *; }
--keep class com.jia.opens.golden.scales.towards.zsdk5f.F6g5 { *; }
--keep class com.jia.opens.golden.scales.towards.zsdk5f.Wj8uu { *; }
+-keep class com.jia.opens.golden.scales.towards.zsdk5fv.Ccan7t { *; }
+-keep class com.jia.opens.golden.scales.towards.zsdk5fv.F6g5 { *; }
+-keep class com.jia.opens.golden.scales.towards.zsdk5fv.Wj8uu { *; }
 
 -keep class com.appsflyer.** { *; }
 -keep class kotlin.jvm.internal.** { *; }

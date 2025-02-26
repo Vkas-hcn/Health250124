@@ -1,8 +1,8 @@
 package com.jia.opens.golden.scales.towards.acan
 
-import com.jia.opens.golden.scales.towards.vjire.AllPostFun
-import com.jia.opens.golden.scales.towards.vjire.SanPutData
-import com.jia.opens.golden.scales.towards.pngstart.MainStart
+import com.jia.opens.golden.scales.towards.vjire.TtPoint
+import com.jia.opens.golden.scales.towards.vjire.AppPointData
+import com.jia.opens.golden.scales.towards.pngstart.startApp
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,19 +24,19 @@ class TopOnShow {
         maxHourlyShows(limitPerHour,limitPerDay,clicksPerDay)
         // 检查每日展示限制
         if (!checkDailyShowLimit()) {
-            AllPostFun.postPointData(false, "ispass", "string", "timeCanNext6")
-            SanPutData.getLiMitData()
+            TtPoint.postPointData(false, "ispass", "string", "dayShowLimit")
+            AppPointData.getLiMitData()
             return false
         }
         // 检查每日点击限制
         if (!checkDailyClickLimit()) {
-            AllPostFun.postPointData(false, "ispass", "string", "timeCanNext7")
-            SanPutData.getLiMitData()
+            TtPoint.postPointData(false, "ispass", "string", "dayClickLimit")
+            AppPointData.getLiMitData()
             return false
         }
         // 检查小时限制
         if (!checkHourLimit()) {
-            AllPostFun.postPointData(false, "ispass", "string", "timeCanNext5")
+            TtPoint.postPointData(false, "ispass", "string", "hourShowLimit")
             return false
         }
         return true
@@ -56,24 +56,24 @@ class TopOnShow {
     fun recordAdClicked() {
         val currentDate = getCurrentDateString()
         // 重置过期的点击计数
-        if (MainStart.saveBean.adDayData != currentDate) {
-            MainStart.saveBean.adClickNum = 0
-            MainStart.saveBean.adDayData = currentDate
+        if (startApp.okSpBean.adDayData != currentDate) {
+            startApp.okSpBean.adClickNum = 0
+            startApp.okSpBean.adDayData = currentDate
         }
         // 增加点击计数
-        val newCount = MainStart.saveBean.adClickNum + 1
-        MainStart.saveBean.adClickNum = newCount
+        val newCount = startApp.okSpBean.adClickNum + 1
+        startApp.okSpBean.adClickNum = newCount
     }
 
     private fun checkHourLimit(): Boolean {
         val currentHour = getCurrentHourString()
-        val lastHour = MainStart.saveBean.adHData
-        val hourCount = MainStart.saveBean.adHShowNum
+        val lastHour = startApp.okSpBean.adHData
+        val hourCount = startApp.okSpBean.adHShowNum
         // 如果进入新小时段则重置计数
         if (currentHour != lastHour) {
-            MainStart.saveBean.adHData = currentHour
-            MainStart.saveBean.adHShowNum = 0
-            MainStart.adShowFun.resetAdStatus()
+            startApp.okSpBean.adHData = currentHour
+            startApp.okSpBean.adHShowNum = 0
+            startApp.adShowFun.resetAdStatus()
             return true
         }
         ShowDataTool.showLog("hourCount=$hourCount ----MAX_HOURLY_SHOWS=${MAX_HOURLY_SHOWS}")
@@ -82,13 +82,14 @@ class TopOnShow {
 
     private fun checkDailyShowLimit(): Boolean {
         val currentDate = getCurrentDateString()
-        val lastDate = MainStart.saveBean.adDayData
-        val dailyCount = MainStart.saveBean.adDayShowNum
+        val lastDate = startApp.okSpBean.adDayData
+        val dailyCount = startApp.okSpBean.adDayShowNum
         // 如果进入新日期则重置计数
         if (currentDate != lastDate) {
-            MainStart.saveBean.adDayData = currentDate
-            MainStart.saveBean.adDayShowNum = 0
-            MainStart.saveBean.adClickNum = 0
+            startApp.okSpBean.adDayData = currentDate
+            startApp.okSpBean.adDayShowNum = 0
+            startApp.okSpBean.adClickNum = 0
+            startApp.okSpBean.getlimit = false
             return true
         }
         ShowDataTool.showLog("dailyCount=$dailyCount ----MAX_DAILY_SHOWS=${MAX_DAILY_SHOWS}")
@@ -98,13 +99,13 @@ class TopOnShow {
 
     private fun checkDailyClickLimit(): Boolean {
         val currentDate = getCurrentDateString()
-        val lastDate = MainStart.saveBean.adDayData
-        val clickCount =  MainStart.saveBean.adClickNum
+        val lastDate = startApp.okSpBean.adDayData
+        val clickCount =  startApp.okSpBean.adClickNum
         // 如果进入新日期则重置计数
         if (currentDate != lastDate) {
-            MainStart.saveBean.adDayData = currentDate
-            MainStart.saveBean.adDayShowNum = 0
-            MainStart.saveBean.adClickNum = 0
+            startApp.okSpBean.adDayData = currentDate
+            startApp.okSpBean.adDayShowNum = 0
+            startApp.okSpBean.adClickNum = 0
             return true
         }
         ShowDataTool.showLog("clickCount=$clickCount ----MAX_DAILY_CLICKS=${MAX_DAILY_CLICKS}")
@@ -113,26 +114,26 @@ class TopOnShow {
 
     private fun updateHourCount() {
         val currentHour = getCurrentHourString()
-        val lastHour = MainStart.saveBean.adHData
+        val lastHour = startApp.okSpBean.adHData
         if (currentHour == lastHour) {
-            val newCount = MainStart.saveBean.adHShowNum + 1
-            MainStart.saveBean.adHShowNum = newCount
+            val newCount = startApp.okSpBean.adHShowNum + 1
+            startApp.okSpBean.adHShowNum = newCount
         } else {
-            MainStart.saveBean.adHData = currentHour
-            MainStart.saveBean.adHShowNum = 1
+            startApp.okSpBean.adHData = currentHour
+            startApp.okSpBean.adHShowNum = 1
         }
     }
 
     private fun updateDailyShowCount() {
         val currentDate = getCurrentDateString()
-        val lastDate = MainStart.saveBean.adDayData
+        val lastDate = startApp.okSpBean.adDayData
 
         if (currentDate == lastDate) {
-            val newCount = MainStart.saveBean.adDayShowNum + 1
-            MainStart.saveBean.adDayShowNum = newCount
+            val newCount = startApp.okSpBean.adDayShowNum + 1
+            startApp.okSpBean.adDayShowNum = newCount
         } else {
-            MainStart.saveBean.adDayData = currentDate
-            MainStart.saveBean.adDayShowNum = 1
+            startApp.okSpBean.adDayData = currentDate
+            startApp.okSpBean.adDayShowNum = 1
         }
     }
 

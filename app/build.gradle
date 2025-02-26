@@ -24,7 +24,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
-            debuggable true
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -48,7 +47,7 @@ stringfog {
     implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
     packageName 'com.github.megatronking.stringfog.app'
     enable true
-    fogPackages = ['com.healthybody.happyeveryday.xxs']
+    fogPackages = ['com.healthybody.happyeveryday.xxs', 'com.jia.opens.golden.scales.towards']
     kg new RandomKeyGenerator()
     mode StringFogMode.base64
 }

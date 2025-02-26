@@ -10,7 +10,7 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import android.widget.RemoteViews
 import com.jia.opens.golden.scales.towards.R
-import com.jia.opens.golden.scales.towards.jgri6sd.SanShow.KEY_IS_SERVICE
+import com.jia.opens.golden.scales.towards.vjire.PngCanGo.KEY_IS_SERVICE
 import com.jia.opens.golden.scales.towards.acan.ShowDataTool
 
 class PngTwoFService : Service() {
@@ -19,7 +19,7 @@ class PngTwoFService : Service() {
         ShowDataTool.showLog("FebFiveFffService onStartCommand-1=${KEY_IS_SERVICE}")
         if (!KEY_IS_SERVICE) {
             KEY_IS_SERVICE =true
-            val channel = NotificationChannel("sancango", "sancango", NotificationManager.IMPORTANCE_MIN)
+            val channel = NotificationChannel("pngJia", "pngJia", NotificationManager.IMPORTANCE_MIN)
             channel.setSound(null, null)
             channel.enableLights(false)
             channel.enableVibration(false)
@@ -28,8 +28,8 @@ class PngTwoFService : Service() {
             }
             runCatching {
                 startForeground(
-                    7788,
-                    NotificationCompat.Builder(this, "sancango").setSmallIcon(R.drawable.show_can_t)
+                    5633,
+                    NotificationCompat.Builder(this, "pngJia").setSmallIcon(R.drawable.ces_show)
                         .setContentText("")
                         .setContentTitle("")
                         .setOngoing(true)

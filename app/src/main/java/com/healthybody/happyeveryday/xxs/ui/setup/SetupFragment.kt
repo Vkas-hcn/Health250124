@@ -32,7 +32,7 @@ class SetupFragment : Fragment() {
         binding.verTv.setText("V"+verName)
 
         binding.privacy.setOnClickListener {
-            val https = "https://www.bing.com"
+            val https = "https://sites.google.com/view/sugarbp-keeper/home"
             ActivityCompat.startActivity(mContext, Util.getWebIntent(https),null)
         }
         return root

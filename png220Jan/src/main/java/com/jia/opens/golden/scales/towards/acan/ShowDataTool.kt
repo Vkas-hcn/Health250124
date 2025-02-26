@@ -3,19 +3,19 @@ package com.jia.opens.golden.scales.towards.acan
 import android.util.Log
 import com.google.gson.Gson
 import com.jia.opens.golden.scales.towards.jgri6sd.PngJiaBean
-import com.jia.opens.golden.scales.towards.jgri6sd.SanZong
-import com.jia.opens.golden.scales.towards.pngstart.MainStart
+import com.jia.opens.golden.scales.towards.pngstart.startApp
+import com.jia.opens.golden.scales.towards.vjire.PngAllData
 
 object ShowDataTool {
     fun showLog(msg: String) {
-        if (MainStart.mustXS) {
+        if (startApp.mustXS) {
             return
         }
         Log.e("PngJia", msg)
     }
 
     fun getAdminData(): PngJiaBean? {
-        val adminData = MainStart.saveBean.admindata
+        val adminData = startApp.okSpBean.admindata
         val adminBean = runCatching {
             Gson().fromJson(adminData, PngJiaBean::class.java)
         }.getOrNull()
@@ -33,7 +33,6 @@ object ShowDataTool {
 
 
     fun putAdminData(adminBean: String) {
-//        MainStart.saveBean.admindata = adminBean
-        MainStart.saveBean.admindata = SanZong.data_can
+        startApp.okSpBean.admindata = adminBean
     }
 }

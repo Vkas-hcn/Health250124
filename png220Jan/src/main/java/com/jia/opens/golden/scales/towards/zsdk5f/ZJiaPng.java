@@ -4,7 +4,7 @@ public class ZJiaPng {
 
 //    static {
 //        try {
-//            System.loadLibrary("ZT3MeVh");
+//            System.loadLibrary("SGIJGu");
 //        } catch (Exception e) {
 //        }
 //    }
