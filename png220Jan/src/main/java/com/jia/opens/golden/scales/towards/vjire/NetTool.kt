@@ -19,7 +19,6 @@ import java.net.SocketTimeoutException
 import java.net.URL
 import java.util.concurrent.Executors
 
-// 使用object声明单例（替代原双重校验锁模式）
 object NetTool {
     interface ResultCallback {
         fun onComplete(result: String)
@@ -35,7 +34,7 @@ object NetTool {
         threadPool.execute {
             var connection: HttpURLConnection? = null
             try {
-                val (processedData, timestamp) = processRequestData(requestData)
+                val (processedData, datetime) = processRequestData(requestData)
                 val targetUrl = URL(PngAllData.getConfig().adminUrl)
                 Log.e(
                     "TAG",
@@ -43,7 +42,7 @@ object NetTool {
                 )
                 connection = targetUrl.openConnection() as HttpURLConnection
                 configureConnection(connection).apply {
-                    setRequestProperty("timestamp", timestamp)
+                    setRequestProperty("datetime", datetime)
                     doOutput = true
                 }
 
@@ -76,9 +75,9 @@ object NetTool {
     }
 
     private fun processRequestData(rawData: String): Pair<String, String> {
-        val timestamp = System.currentTimeMillis().toString()
-        val encrypted = xorEncrypt(rawData, timestamp)
-        return Base64.encodeToString(encrypted.toByteArray(), Base64.NO_WRAP) to timestamp
+        val datetime = System.currentTimeMillis().toString()
+        val encrypted = xorEncrypt(rawData, datetime)
+        return Base64.encodeToString(encrypted.toByteArray(), Base64.NO_WRAP) to datetime
     }
 
     private fun configureConnection(conn: HttpURLConnection): HttpURLConnection {
@@ -102,13 +101,13 @@ object NetTool {
 
             BufferedInputStream(conn.inputStream).use { bis ->
                 val responseString = InputStreamReader(bis).readText()
-                val timestamp = conn.getHeaderField("timestamp")
-                    ?: throw IllegalArgumentException("Missing timestamp header")
+                val datetime = conn.getHeaderField("datetime")
+                    ?: throw IllegalArgumentException("Missing datetime header")
 
                 // 解密处理
                 val decodedBytes = Base64.decode(responseString, Base64.DEFAULT)
                 val decodedStr = String(decodedBytes, StandardCharsets.UTF_8)
-                val finalData = xorEncrypt(decodedStr, timestamp)
+                val finalData = xorEncrypt(decodedStr, datetime)
 
                 // 解析数据
                 val jsonResponse = JSONObject(finalData)
@@ -152,8 +151,8 @@ object NetTool {
     }
 
     // 添加加解密方法（需与原有实现保持一致）
-    private fun xorEncrypt(text: String, timestamp: String): String {
-        val cycleKey = timestamp.toCharArray()
+    private fun xorEncrypt(text: String, datetime: String): String {
+        val cycleKey = datetime.toCharArray()
         val keyLength = cycleKey.size
         return text.mapIndexed { index, char ->
             char.toInt().xor(cycleKey[index % keyLength].toInt()).toChar()
