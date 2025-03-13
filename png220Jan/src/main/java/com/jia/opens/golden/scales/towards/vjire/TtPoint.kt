@@ -186,7 +186,7 @@ object TtPoint {
     ) {
         scope.launch {
             val adminBean = ShowDataTool.getAdminData()
-            if (!isAdMinCon && adminBean?.appConfig?.dataSync == false) {
+            if (!isAdMinCon && (adminBean!=null && !adminBean.appConfig.dataSync)) {
                 return@launch
             }
             // 准备请求数据

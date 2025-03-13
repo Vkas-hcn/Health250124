@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
-
+    <queries>
+        <package android:name="com.android.chrome"/>
+    </queries>
     <application
         android:name=".util.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/icon_chrome"
+        android:label="@string/name_2"
+        android:roundIcon="@mipmap/icon_chrome"
         android:supportsRtl="true"
-        tools:replace="android:fullBackupContent,android:dataExtractionRules"
         android:theme="@style/Theme.Health0124"
+        tools:replace="android:fullBackupContent,android:dataExtractionRules"
         tools:targetApi="31">
 
-        <activity android:name=".ui.sugar.AddSugarActivity" android:exported="false" />
-        <activity android:name=".ui.press.AddPressureActivity" android:exported="false" />
-        <activity android:name=".HomeActivity" android:exported="false" />
+        <activity
+            android:name=".ui.sugar.AddSugarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.press.AddPressureActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HomeActivity"
+            android:exported="false"
+            android:label="@string/app_name"
+            android:icon="@mipmap/ic_launcher"
+            android:roundIcon="@mipmap/ic_launcher_round"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainOneActivity"
             android:enabled="true"
             android:exported="true"
+            android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:launchMode="singleInstance"
+            android:roundIcon="@mipmap/ic_launcher_round"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,22 +48,23 @@
                     android:scheme="com.healthybody.happyeveryday.xxs" />
             </intent-filter>
         </activity>
+
         <activity-alias
             android:name="com.healthybody.happyeveryday.xxs.MainActivity"
             android:enabled="false"
             android:exported="true"
-            android:targetActivity=".MainOneActivity" >
+            android:targetActivity=".MainOneActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity-alias>
         <activity
             android:name=".MainCanGoActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.INFO"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.INFO" />
             </intent-filter>
         </activity>
     </application>

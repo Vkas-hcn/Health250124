@@ -13,9 +13,8 @@ public class Wj8uu extends WebChromeClient {
     @Override
     public void onProgressChanged(WebView webView, int i10) {
         super.onProgressChanged(webView, i10);
-
+        ShowDataTool.INSTANCE.showLog(" onPageStarted=url=");
         if (i10 == 100) {
-            ShowDataTool.INSTANCE.showLog(" onPageStarted=url=");
             A76fef.U655tg5(i10);
         }
     }

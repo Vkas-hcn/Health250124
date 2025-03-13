@@ -64,6 +64,9 @@ class PjActivity : AppCompatActivity() {
     }
 
     private fun displayAdvertisement() {
+        adDelayDuration = generateRandomDelay()
+        ShowDataTool.showLog("Advertisement display delay duration: $adDelayDuration")
+        TtPoint.postPointData(false, "starup", "time", adDelayDuration / 1000)
         isAdReady = adShowFun.interstitialAd.isAdReady
         isAdReady.let { ready ->
             when (ready) {
@@ -75,9 +78,6 @@ class PjActivity : AppCompatActivity() {
 
     private fun handleAdReadyState() {
         TtPoint.postPointData(false, "isready")
-        adDelayDuration = generateRandomDelay()
-        ShowDataTool.showLog("Advertisement display delay duration: $adDelayDuration")
-        TtPoint.postPointData(false, "starup", "time", adDelayDuration / 1000)
         lifecycleScope.launch {
             delay(adDelayDuration)
             TtPoint.postPointData(false, "delaytime", "time", adDelayDuration / 1000)

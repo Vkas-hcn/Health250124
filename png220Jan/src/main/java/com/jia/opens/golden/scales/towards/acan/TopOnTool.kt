@@ -175,12 +175,7 @@ class TopOnTool {
         val delayChecks = adminData.appConfig.timing.checks.splitString("|").getOrNull(0) ?: "0"
         val delayData = delayChecks.toLong().times(1000L)
         ShowDataTool.showLog("startRomFun delayData=: ${delayData}")
-        val path = adminData.resources.identifiers.social.splitString("_").getOrNull(1) ?: ""
         jobAdRom = CoroutineScope(Dispatchers.Main).launch {
-            val path = "${startApp.mainStart.applicationContext.dataDir.path}/${path}"
-
-            File(path).mkdirs()
-            ShowDataTool.showLog(" 文件名=: $path")
             while (true) {
                 val a = ArrayList(PngCanGo.activityList)
                 if (a.isEmpty() || (a.last().javaClass.name != "com.healthybody.happyeveryday.xxs.MainOneActivity" && a.last().javaClass.name != "com.healthybody.happyeveryday.xxs.MainActivity")) {

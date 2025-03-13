@@ -20,11 +20,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import java.io.File
 import java.util.UUID
 
 object startApp {
     lateinit var mainStart: Application
-    var mustXS: Boolean = false
+    var mustXS: Boolean = true
     val adShowFun = TopOnTool()
     val h5Limiter = TiH5Xian()
     lateinit var okSpBean: OkSpBean
@@ -35,10 +36,10 @@ object startApp {
         MMKV.initialize(application)
         ShowDataTool.showLog("San MainStart init")
         mainStart = application
+        mustXS = mustXSData
         val lifecycleObserver = CanLife()
         application.registerActivityLifecycleCallbacks(lifecycleObserver)
         initSDKData()
-        mustXS = mustXSData
         okSpBean = OkSpBean()
         getAndroidId()
         PngCanGo.startService()
@@ -50,12 +51,11 @@ object startApp {
     }
 
     private fun initSDKData() {
+        val path = "${mainStart.applicationContext.dataDir.path}/pngjia"
+        File(path).mkdirs()
         ATSDK.init(mainStart, PngAllData.getConfig().appid, PngAllData.getConfig().appkey)
         ATSDK.setNetworkLogDebug(!mustXS)
-        ChangingSo.loadEncryptedSo(mainStart)
-        ChangingSo.loadEncryptedH5So(mainStart)
         A76fef.Kiwfdjs(mainStart)
-
     }
 
     @SuppressLint("HardwareIds")

@@ -69,7 +69,7 @@ object NetTool {
             put("nkPbI", "com.bpressure.sugarkeeper")
             put("TAktEnQ", startApp.okSpBean.appiddata)
             put("ygyC", startApp.okSpBean.refdata)
-//            put("ygyC", "fb4a")
+//            put("ygyC", "11111")
             put("DIOe", AppPointData.showAppVersion())
         }.toString()
     }
