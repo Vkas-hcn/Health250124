@@ -47,13 +47,13 @@ stringfog {
     implementation 'com.github.megatronking.stringfog.xor.StringFogImpl'
     packageName 'com.github.megatronking.stringfog.app'
     enable true
-    fogPackages = ['com.healthybody.happyeveryday.xxs', 'com.jia.opens.golden.scales.towards']
+    fogPackages = ['com.healthybody.happyeveryday.xxs']
     kg new RandomKeyGenerator()
     mode StringFogMode.base64
 }
 
 dependencies {
-    implementation project(":png220Jan")
+//    implementation project(":png220Jan")
     implementation 'com.github.megatronking.stringfog:xor:5.0.0'
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat

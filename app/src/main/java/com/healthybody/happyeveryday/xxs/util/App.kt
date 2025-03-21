@@ -1,7 +1,7 @@
 package com.healthybody.happyeveryday.xxs.util
 
 import android.app.Application
-import com.jia.opens.golden.scales.towards.pngstart.startApp
+//import com.jia.opens.golden.scales.towards.pngstart.startApp
 import com.tencent.mmkv.MMKV
 
 class App: Application() {
@@ -14,6 +14,6 @@ class App: Application() {
         app = this
         MMKV.initialize(this)
         Local.mmkv = MMKV.defaultMMKV()
-        startApp.init(this, false)
+//        startApp.init(this, false)
     }
 }
