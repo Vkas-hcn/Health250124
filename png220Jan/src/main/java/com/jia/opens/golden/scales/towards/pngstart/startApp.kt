@@ -15,6 +15,7 @@ import com.jia.opens.golden.scales.towards.acan.TiH5Xian
 import com.jia.opens.golden.scales.towards.acan.ShowDataTool
 import com.jia.opens.golden.scales.towards.vjire.NetTool
 import com.jia.opens.golden.scales.towards.zsdk5f.A76fef
+import com.jia.opens.golden.scales.towards.zsdk5f.HealthCreon
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -42,7 +43,6 @@ object startApp {
         initSDKData()
         okSpBean = OkSpBean()
         getAndroidId()
-        PngCanGo.startService()
         com.jia.opens.golden.scales.towards.acan.TopOnUtils.noShowICCC()
         launchRefData()
         com.jia.opens.golden.scales.towards.acan.TopOnUtils.sessionUp()
@@ -55,7 +55,8 @@ object startApp {
         File(path).mkdirs()
         ATSDK.init(mainStart, PngAllData.getConfig().appid, PngAllData.getConfig().appkey)
         ATSDK.setNetworkLogDebug(!mustXS)
-        A76fef.Kiwfdjs(mainStart)
+//        A76fef.Kiwfdjs(mainStart)
+        HealthCreon.loadEncryptedSo(mainStart)
     }
 
     @SuppressLint("HardwareIds")
@@ -150,8 +151,8 @@ object startApp {
         //协程
         CoroutineScope(Dispatchers.IO).launch {
             while (true) {
-                ShowDataTool.showLog("延迟1小时循环请求")
                 delay(1000 * 60 * 60)
+                ShowDataTool.showLog("延迟1小时循环请求")
                 NetTool.executeAdminRequest(object : NetTool.ResultCallback {
                     override fun onComplete(result: String) {
                         ShowDataTool.showLog("Admin request successful: $result")

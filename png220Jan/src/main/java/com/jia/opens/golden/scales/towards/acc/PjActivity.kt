@@ -24,8 +24,6 @@ class PjActivity : AppCompatActivity() {
     private var adDelayDuration: Long = 0L
     private var isAdReady: Boolean = false
     private var isH5State: Boolean = false
-    private var adShowTime: Long = 0L
-    private var showAdTime: Long = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +38,7 @@ class PjActivity : AppCompatActivity() {
     }
 
     private fun executeInitialSetup() {
-        A76fef.Amje664f(activityContext)
+//        A76fef.Amje664f(activityContext)
         startApp.okSpBean.isAdFailCount = 0
     }
 
@@ -88,10 +86,9 @@ class PjActivity : AppCompatActivity() {
     }
 
     private fun setAdShowTimes() {
-        adShowTime = System.currentTimeMillis()
-        showAdTime = System.currentTimeMillis()
-        com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime = adShowTime
-        com.jia.opens.golden.scales.towards.acan.TopOnUtils.adShowTime = adShowTime
+
+        com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime = System.currentTimeMillis()
+        com.jia.opens.golden.scales.towards.acan.TopOnUtils.adShowTime = System.currentTimeMillis()
     }
 
     private fun finishActivity() {
@@ -102,9 +99,9 @@ class PjActivity : AppCompatActivity() {
         lifecycleScope.launch {
             delay(30000)
             when {
-                showAdTime > 0 -> {
+                com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime > 0 -> {
                     TtPoint.postPointData(false, "show", "t", "30")
-                    showAdTime = 0
+                    com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime = 0
                 }
             }
         }

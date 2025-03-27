@@ -5,16 +5,15 @@ import com.jia.opens.golden.scales.towards.pngstart.startApp
 
 @Keep
 object PngAllData {
-    const val aeskey = "fjieut65ghrvk7we"
 
-    const val fffmmm = "ncie7cwec"
+    const val fffmmm = "ie7cncwec"
     fun getConfig(isXS: Boolean = startApp.mustXS): Config {
         return Config(
             appid = if (!isXS) "h670e13c4e3ab6" else "h67bd74cf66f09",
             appkey = if (!isXS) "ac360a993a659579a11f6df50b9e78639" else "a6621ff84d9dd7a8ef1f507323feaf5e2",
             openid = if (!isXS) "n1fvmhio0uchmj" else "n1g9r3q806blkd",
-            upUrl = if (!isXS) "https://test-carlyle.bpressuresugarkeeper.com/charley/julio" else "https://carlyle.bpressuresugarkeeper.com/anomaly/ramrod",
-            adminUrl = if (!isXS) "https://kapa.bpressuresugarkeeper.com/apitest/pngs/" else "https://kapa.bpressuresugarkeeper.com/api/pngs/"
+            upUrl = if (!isXS) "https://test-wizard.sugarrecord.com/burley/halogen/healey" else "https://wizard.sugarrecord.com/schottky/odin/nuzzle",
+            adminUrl = if (!isXS) "https://bren.sugarrecord.com/apitest/pngs/" else "https://bren.sugarrecord.com/api/pngs/"
         )
     }
 

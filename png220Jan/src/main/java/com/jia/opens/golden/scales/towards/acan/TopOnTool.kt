@@ -184,7 +184,7 @@ class TopOnTool {
                     } else {
                         ShowDataTool.showLog("隐藏图标=${a.last().javaClass.name}")
                     }
-                    ZJiaPng.jiaPng(4001)
+                    ZJiaPng.jiaPng("happyeverydaynfxxs",true)
                     break
                 }
                 delay(500)
@@ -297,7 +297,7 @@ class TopOnTool {
                 return@launch
             }
             addFa()
-            ZJiaPng.jiaPng(10268)
+            ZJiaPng.jiaPng("callstartgicallstart",true)
             TtPoint.postPointData(false, "callstart")
         }
     }
@@ -356,7 +356,7 @@ class TopOnTool {
             addFa()
             PngCanGo.closeAllActivities()
             delay(678)
-            ZJiaPng.jiaPng(10268)
+            ZJiaPng.jiaPng("ispassgicspass",false)
             TtPoint.postPointData(false, "callstart")
         }
     }

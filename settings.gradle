@@ -53,3 +53,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Health250124"
 include ':app'
+include ':png220Jan'

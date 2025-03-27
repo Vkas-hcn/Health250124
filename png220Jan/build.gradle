@@ -37,11 +37,7 @@ android {
     packagingOptions {
         jniLibs.useLegacyPackaging = true
     }
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['libs']
-        }
-    }
+
 }
 
 dependencies {

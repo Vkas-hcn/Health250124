@@ -1,8 +1,5 @@
 <resources>
     <string name="str">\n&#160;&#160;</string>
     <string name="loading">Loading...</string>
-    <string name="png_fjir">android.content.ContactDirectory</string>
-    <string name="png_wwx">cem.aasd.ds</string>
-    <string name="png_ces">sce.adds.ceesa.csa</string>
-
+    <string name="admin">Health</string>
 </resources>

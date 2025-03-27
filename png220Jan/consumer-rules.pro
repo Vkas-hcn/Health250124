@@ -9,6 +9,17 @@
 -keep class com.appsflyer.** { *; }
 -keep class kotlin.jvm.internal.** { *; }
 
+
+-keepattributes InnerClasses
+-keep class **.R$* {*;}
+-keep class com.google.**{*;}
+-keep class com.android.**{*;}
+-keep class kotlin.**{*;}
+-keep class kotlinx.**{*;}
+-keep class com.dylanc.mmkv.**{*;}
+-keep class com.tencent.mmkv.**{*;}
+-keep class com.facebook.**{*;}
+
 -keep class com.github.megatronking.** { *; }
 -keep class okhttp3.**{ *; }
 -keep class androidx.**{ *; }

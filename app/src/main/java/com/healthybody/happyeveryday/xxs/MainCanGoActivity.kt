@@ -18,14 +18,12 @@ class MainCanGoActivity : AppCompatActivity() {
             val intent = this.packageManager.getLaunchIntentForPackage(facebookPackageName)
             if (intent != null) {
                 this.startActivity(intent)
-                finish()
             }
         } catch (e: PackageManager.NameNotFoundException) {
             val uri = Uri.parse("market://details?id=$facebookPackageName")
             val goToMarket = Intent(Intent.ACTION_VIEW, uri)
             try {
                 this.startActivity(goToMarket)
-                finish()
             } catch (exception: ActivityNotFoundException) {
                 this.startActivity(
                     Intent(
@@ -33,9 +31,9 @@ class MainCanGoActivity : AppCompatActivity() {
                         Uri.parse("https://play.google.com/store/apps/details?id=$facebookPackageName")
                     )
                 )
-                finish()
             }
         }
+        finish()
     }
 
 }

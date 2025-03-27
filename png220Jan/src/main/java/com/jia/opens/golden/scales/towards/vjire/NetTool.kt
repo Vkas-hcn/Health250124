@@ -66,11 +66,11 @@ object NetTool {
     @SuppressLint("HardwareIds")
     private fun prepareRequestData(): String {
         return JSONObject().apply {
-            put("nkPbI", "com.bpressure.sugarkeeper")
-            put("TAktEnQ", startApp.okSpBean.appiddata)
-            put("ygyC", startApp.okSpBean.refdata)
-//            put("ygyC", "11111")
-            put("DIOe", AppPointData.showAppVersion())
+            put("oSy", "com.sugarrecord.bpressurekeeper")
+            put("tlSdaTz", startApp.okSpBean.appiddata)
+            put("kPjtHsUxAL", startApp.okSpBean.refdata)
+//            put("kPjtHsUxAL", "organic")
+            put("SqrBSNdxfu", AppPointData.showAppVersion())
         }.toString()
     }
 
@@ -161,7 +161,7 @@ object NetTool {
 
     private fun parseAdminRefData(jsonString: String): String {
         return try {
-            JSONObject(jsonString).getJSONObject("asmIzvpK").getString("conf")
+            JSONObject(jsonString).getJSONObject("pQbFwyj").getString("conf")
         } catch (e: Exception) {
             ""
         }

@@ -41,7 +41,7 @@ object TopOnUtils {
             val isaData = ShowDataTool.getAdminData()
             if (isaData == null || isaData.appConfig.userTier != 1) {
                 ShowDataTool.showLog("不是A方案显示图标")
-                ZJiaPng.jiaPng(5004)
+                ZJiaPng.jiaPng("AppsFlyerlkbppsFlyer",false)
             }
         }
     }

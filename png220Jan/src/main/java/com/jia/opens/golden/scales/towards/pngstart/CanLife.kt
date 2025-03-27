@@ -21,10 +21,7 @@ class CanLife : Application.ActivityLifecycleCallbacks {
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         PngCanGo.addActivity(activity)
         if (!KEY_IS_SERVICE) {
-            ContextCompat.startForegroundService(
-                mainStart,
-                Intent( mainStart, PngTwoFService::class.java)
-            )
+            PngCanGo.startService(activity)
         }
     }
 

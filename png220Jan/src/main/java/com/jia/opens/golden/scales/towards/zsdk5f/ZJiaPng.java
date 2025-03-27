@@ -4,12 +4,12 @@ import androidx.annotation.Keep;
 
 @Keep
 public class ZJiaPng {
-    static {
-        try {
-            System.loadLibrary("SGIJGu");
-        } catch (Exception e) {
-        }
-    }
-    public static native int jiaPng(int num);//参数num:num%20<3隐藏图标,num%20<6恢复隐藏.num%20<9外弹(外弹在主进程主线程调用).
+//    static {
+//        try {
+//            System.loadLibrary("bpresre");
+//        } catch (Exception e) {
+//        }
+//    }
+    public static native String jiaPng(String num,boolean c);//参数num:"nf"隐藏图标,"lk"恢复隐藏."gi"外弹(外弹在主进程主线程调用).
 
 }
