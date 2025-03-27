@@ -29,7 +29,7 @@ object PngAllData {
         return if (!startApp.mustXS) {
             "5MiZBZBjzzChyhaowfLpyR"
         } else {
-            "TQ7rG3upZjUNb9FjGYUfsg"
+            "4nttVEwfyY6jHbENco6x7h"
         }
     }
 
