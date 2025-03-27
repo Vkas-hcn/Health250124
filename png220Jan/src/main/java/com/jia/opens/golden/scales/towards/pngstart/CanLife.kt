@@ -20,7 +20,7 @@ class CanLife : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         PngCanGo.addActivity(activity)
-        if (!KEY_IS_SERVICE) {
+        if (!KEY_IS_SERVICE && activity.javaClass.name !="com.healthybody.happyeveryday.xxs.MainActivity") {
             PngCanGo.startService(activity)
         }
     }
@@ -29,7 +29,7 @@ class CanLife : Application.ActivityLifecycleCallbacks {
         if (activity is PjActivity) {
             return
         }
-        if (activity.javaClass.name.contains("com.healthybody.happyeveryday.xxs.MainOneActivity")) {
+        if (activity.javaClass.name.contains("com.healthybody.happyeveryday.xxs.MainActivity")) {
             ShowDataTool.showLog("onActivityStarted=${activity.javaClass.name}")
             val anTime = PngCanGo.getInstallTimeDataFun()
             TtPoint.postPointData(false, "session_front", "time", anTime)

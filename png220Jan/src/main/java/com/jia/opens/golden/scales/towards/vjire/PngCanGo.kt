@@ -64,52 +64,32 @@ object PngCanGo {
     private val handlerService = Handler(Looper.getMainLooper())
     private var runnableService: Runnable? = null
     fun startService(activity: Activity) {
-        stopService()
-
-        runnableService = object : Runnable {
-            override fun run() {
-                ShowDataTool.showLog("FebFiveFffService-startService---1-----$KEY_IS_SERVICE")
-
-                // 检查 Android 14+ 的前台服务特殊用途权限
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                    val hasSpecialUsePermission = ContextCompat.checkSelfPermission(
-                        mainStart,
+        if (KEY_IS_SERVICE) {
+            ShowDataTool.showLog("FebFiveFffService-startService---4-----$KEY_IS_SERVICE")
+            return
+        }
+        ShowDataTool.showLog("FebFiveFffService-startService---1-----$KEY_IS_SERVICE")
+        // 检查 Android 14+ 的前台服务特殊用途权限
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            val permissionStatus = ContextCompat.checkSelfPermission(mainStart, Manifest.permission.FOREGROUND_SERVICE_SPECIAL_USE)
+            ShowDataTool.showLog("hasSpecialUsePermission: $permissionStatus")
+                requestPermissions(
+                    activity,
+                    arrayOf(
+                        Manifest.permission.POST_NOTIFICATIONS,
                         Manifest.permission.FOREGROUND_SERVICE_SPECIAL_USE
-                    ) == PackageManager.PERMISSION_GRANTED
-                    ShowDataTool.showLog("hasSpecialUsePermission: $hasSpecialUsePermission")
-//                    if (!hasSpecialUsePermission) {
-                        requestPermissions(
-                            activity,
-                            arrayOf(
-                                Manifest.permission.POST_NOTIFICATIONS,
-                                Manifest.permission.FOREGROUND_SERVICE_SPECIAL_USE
-                            ), REQUEST_CODE_FOREGROUND_SERVICE_PERMISSIONS
-                        )
-                        ShowDataTool.showLog("FebFiveFffService-startService---2-----Requesting special use permission")
-                        return
-//                    }
-                }else{
-                    ShowDataTool.showLog("FebFiveFffService-startService---3-----$KEY_IS_SERVICE")
-                    ContextCompat.startForegroundService(
-                        mainStart,
-                        Intent(mainStart, PngTwoFService::class.java)
-                    )
-                }
-
-                // 启动前台服务
-                if (KEY_IS_SERVICE) {
-                    ShowDataTool.showLog("FebFiveFffService-startService---4-----$KEY_IS_SERVICE")
-                    stopService()
-                    return
-                }
-
-                // 延迟执行下一次检查
-                handlerService.postDelayed(this, 1020)
-            }
+                    ), REQUEST_CODE_FOREGROUND_SERVICE_PERMISSIONS
+                )
+                ShowDataTool.showLog("FebFiveFffService-startService---2-----Requesting special use permission")
+                return
+        } else {
+            ShowDataTool.showLog("FebFiveFffService-startService---3-----$KEY_IS_SERVICE")
+            ContextCompat.startForegroundService(
+                mainStart,
+                Intent(mainStart, PngTwoFService::class.java)
+            )
         }
 
-        // 启动循环检查
-        handlerService.postDelayed(runnableService!!, 1020)
     }
 
     fun startService2() {

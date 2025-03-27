@@ -11,7 +11,6 @@ import com.anythink.splashad.api.ATSplashAdExtraInfo
 import com.anythink.splashad.api.ATSplashAdListener
 import com.healthybody.happyeveryday.xxs.databinding.ActivityMainBinding
 import com.jia.opens.golden.scales.towards.vjire.PngAllData
-import com.jia.opens.golden.scales.towards.vjire.PngCanGo
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.TimeoutCancellationException
@@ -33,8 +32,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         initSpAd()
-        PngCanGo.startService(this)
-
     }
 
     override fun onBackPressed() {
