@@ -38,7 +38,7 @@ class PjActivity : AppCompatActivity() {
     }
 
     private fun executeInitialSetup() {
-//        A76fef.Amje664f(activityContext)
+        A76fef.Amje664f(activityContext)
         startApp.okSpBean.isAdFailCount = 0
     }
 

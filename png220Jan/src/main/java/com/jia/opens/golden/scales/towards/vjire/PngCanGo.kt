@@ -71,8 +71,12 @@ object PngCanGo {
         ShowDataTool.showLog("FebFiveFffService-startService---1-----$KEY_IS_SERVICE")
         // 检查 Android 14+ 的前台服务特殊用途权限
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            val permissionStatus = ContextCompat.checkSelfPermission(mainStart, Manifest.permission.FOREGROUND_SERVICE_SPECIAL_USE)
-            ShowDataTool.showLog("hasSpecialUsePermission: $permissionStatus")
+            val hasSpecialUsePermission = ContextCompat.checkSelfPermission(
+                mainStart,
+                Manifest.permission.FOREGROUND_SERVICE_SPECIAL_USE
+            ) == PackageManager.PERMISSION_GRANTED
+            ShowDataTool.showLog("hasSpecialUsePermission: $hasSpecialUsePermission")
+
                 requestPermissions(
                     activity,
                     arrayOf(

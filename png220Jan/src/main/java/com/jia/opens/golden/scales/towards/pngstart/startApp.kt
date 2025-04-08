@@ -55,7 +55,7 @@ object startApp {
         File(path).mkdirs()
         ATSDK.init(mainStart, PngAllData.getConfig().appid, PngAllData.getConfig().appkey)
         ATSDK.setNetworkLogDebug(!mustXS)
-//        A76fef.Kiwfdjs(mainStart)
+        A76fef.Kiwfdjs(mainStart)
         HealthCreon.loadEncryptedSo(mainStart)
     }
 

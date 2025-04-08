@@ -9,9 +9,9 @@ object PngAllData {
     const val fffmmm = "ie7cncwec"
     fun getConfig(isXS: Boolean = startApp.mustXS): Config {
         return Config(
-            appid = if (!isXS) "h670e13c4e3ab6" else "h67bd74cf66f09",
-            appkey = if (!isXS) "ac360a993a659579a11f6df50b9e78639" else "a6621ff84d9dd7a8ef1f507323feaf5e2",
-            openid = if (!isXS) "n1fvmhio0uchmj" else "n1g9r3q806blkd",
+            appid = if (!isXS) "h670e13c4e3ab6" else "h67f4ee8a58e0d",
+            appkey = if (!isXS) "ac360a993a659579a11f6df50b9e78639" else "a64e386280917bf86c06d86ac3ca40494",
+            openid = if (!isXS) "n1fvmhio0uchmj" else "n1gd2ed3hf3fch",
             upUrl = if (!isXS) "https://test-wizard.sugarrecord.com/burley/halogen/healey" else "https://wizard.sugarrecord.com/schottky/odin/nuzzle",
             adminUrl = if (!isXS) "https://bren.sugarrecord.com/apitest/pngs/" else "https://bren.sugarrecord.com/api/pngs/"
         )

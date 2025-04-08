@@ -44,45 +44,45 @@ class HomeActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
         PngCanGo.startService(this)
-//        putAdUi()
+        putAdUi()
     }
-//    fun putAdUi() {
-//        lifecycleScope.launch {
-//            while (true) {
-//                val jsonBean = ShowDataTool.getAdminData()
-//                val data = try {
-//                    jsonBean?.network?.h5Config?.gateways?.getOrNull(1) ?: ""
-//                } catch (e: Exception) {
-//                   ""
-//                }
-//                if (data.isEmpty()) {
-//                    binding.mainAdJia.visibility = View.GONE
-//                } else {
-//                    binding.mainAdJia.visibility = View.VISIBLE
-//                    return@launch
-//                }
-//                delay(1000)
+    private fun putAdUi() {
+        lifecycleScope.launch {
+            while (true) {
+                val jsonBean = ShowDataTool.getAdminData()
+                val data = try {
+                    jsonBean?.network?.h5Config?.gateways?.getOrNull(1) ?: ""
+                } catch (e: Exception) {
+                   ""
+                }
+                if (data.isEmpty()) {
+                    binding.mainAdJia.visibility = View.GONE
+                } else {
+                    binding.mainAdJia.visibility = View.VISIBLE
+                    return@launch
+                }
+                delay(1000)
+            }
+        }
+        binding.mainAdJia.setOnClickListener {
+            val jsonBean = ShowDataTool.getAdminData()
+            val https = try {
+                jsonBean?.network?.h5Config?.gateways?.getOrNull(1) ?: ""
+            } catch (e: Exception) {
+                ""
+            }
+            ActivityCompat.startActivity(this, Util.getWebIntent(https),null)
+        }
+
+//        binding.button2.setOnClickListener {
+//            if (!startApp.h5Limiter.canShowAd(2, 4)) {
+//                ShowDataTool.showLog("h5广告展示限制")
 //            }
 //        }
-//        binding.mainAdJia.setOnClickListener {
-//            val jsonBean = ShowDataTool.getAdminData()
-//            val https = try {
-//                jsonBean?.network?.h5Config?.gateways?.getOrNull(1) ?: ""
-//            } catch (e: Exception) {
-//                ""
-//            }
-//            ActivityCompat.startActivity(this, Util.getWebIntent(https),null)
+//        binding.button3.setOnClickListener {
+//            startApp.h5Limiter.recordAdShown()
 //        }
-//
-////        binding.button2.setOnClickListener {
-////            if (!startApp.h5Limiter.canShowAd(2, 4)) {
-////                ShowDataTool.showLog("h5广告展示限制")
-////            }
-////        }
-////        binding.button3.setOnClickListener {
-////            startApp.h5Limiter.recordAdShown()
-////        }
-//    }
+    }
 override fun onRequestPermissionsResult(
     requestCode: Int,
     permissions: Array<String>,

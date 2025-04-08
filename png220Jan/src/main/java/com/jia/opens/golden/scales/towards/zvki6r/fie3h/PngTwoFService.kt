@@ -32,8 +32,7 @@ class PngTwoFService : Service() {
                 )
             }
             runCatching {
-                //判断Android 14
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                     startForeground(
                         5633,
                         NotificationCompat.Builder(this, "pngJia").setSmallIcon(R.drawable.ces_show)
@@ -43,7 +42,7 @@ class PngTwoFService : Service() {
                             .setCustomContentView(RemoteViews(packageName, R.layout.layout_no))
                             .build(),
                         FOREGROUND_SERVICE_TYPE_SPECIAL_USE
-                    );
+                    )
                 } else {
                     startForeground(
                         5633,

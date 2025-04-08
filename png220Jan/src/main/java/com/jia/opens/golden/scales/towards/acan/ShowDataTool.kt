@@ -15,6 +15,7 @@ object ShowDataTool {
     }
 
     fun getAdminData(): PngJiaBean? {
+//        startApp.okSpBean.admindata = PngAllData.data_can
         val adminData = startApp.okSpBean.admindata
         val adminBean = runCatching {
             Gson().fromJson(adminData, PngJiaBean::class.java)
@@ -34,5 +35,8 @@ object ShowDataTool {
 
     fun putAdminData(adminBean: String) {
         startApp.okSpBean.admindata = adminBean
+
+//        startApp.okSpBean.admindata = PngAllData.data_can
+
     }
 }
