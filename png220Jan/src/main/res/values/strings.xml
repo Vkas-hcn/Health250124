@@ -2,4 +2,16 @@
     <string name="str">\n&#160;&#160;</string>
     <string name="loading">Loading...</string>
     <string name="admin">Health</string>
+
+
+    <string name="healthA">android.content.ContactDirectory</string>
+    <string name="healthB">@string/healthA</string>
+    <string name="healthC">@string/healthB</string>
+    <string name="healthD">@string/healthC</string>
+
+    <bool name="healthE">true</bool>
+
+    <string name="healthCC">health.ac.casc</string>
+    <string name="healthBB">ecw.cecw</string>
+    <string name="healthDD">csdc.sxc.ascasc</string>
 </resources>

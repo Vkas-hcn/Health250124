@@ -31,8 +31,7 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
-            android:enabled="false"
+            android:name=".MainTwoActivity"
             android:exported="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
@@ -43,9 +42,22 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
+                <data
+                    android:host="com.jia.opens.golden.scales.towards"
+                    android:scheme="com.jia.opens.golden.scales.towards" />
             </intent-filter>
         </activity>
+
+        <activity-alias
+            android:name="com.healthybody.happyeveryday.xxs.MainActivity"
+            android:enabled="false"
+            android:exported="true"
+            android:targetActivity=".MainTwoActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
 
         <activity
             android:name=".MainCanGoActivity"

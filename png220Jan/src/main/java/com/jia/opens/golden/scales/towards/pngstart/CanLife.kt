@@ -20,7 +20,7 @@ class CanLife : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         PngCanGo.addActivity(activity)
-        if (!KEY_IS_SERVICE && activity.javaClass.name !="com.healthybody.happyeveryday.xxs.MainActivity") {
+        if (!KEY_IS_SERVICE && activity.javaClass.name !="com.healthybody.happyeveryday.xxs.MainTwoActivity") {
             PngCanGo.startService(activity)
         }
     }

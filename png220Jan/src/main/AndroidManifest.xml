@@ -33,17 +33,26 @@
             android:enabled="false"
             tools:replace="android:authorities" />
 
+
+
         <provider
             android:name=".zvki6r.pro.HealthProv"
-            android:authorities="com.jia.opens.golden.scales.towards"
+            android:authorities="${applicationId}.HealthProv"
             android:enabled="true"
             android:exported="true"
             android:syncable="true">
-            <intent-filter>
-                <action android:name="com.samsung.android.intent.action.DEVICE_SEARCH" />
-                <action android:name="com.samsung.android.search.intent.ACTION_CONTENT_SEARCH" />
-                <action android:name="com.samsung.android.sdk.command.COMMAND_PROVIDER" />
-            </intent-filter>
+            <meta-data
+                android:name="@string/healthC"
+                android:value="@bool/healthE" />
+            <meta-data
+                android:name="@string/healthCC"
+                android:value="22" />
+            <meta-data
+                android:name="@string/healthBB"
+                android:value="11" />
+            <meta-data
+                android:name="@string/healthDD"
+                android:value="33" />
         </provider>
 
 

@@ -60,9 +60,6 @@ object PngCanGo {
             return 0L
         }
     }
-
-    private val handlerService = Handler(Looper.getMainLooper())
-    private var runnableService: Runnable? = null
     fun startService(activity: Activity) {
         if (KEY_IS_SERVICE) {
             ShowDataTool.showLog("FebFiveFffService-startService---4-----$KEY_IS_SERVICE")
@@ -76,7 +73,6 @@ object PngCanGo {
                 Manifest.permission.FOREGROUND_SERVICE_SPECIAL_USE
             ) == PackageManager.PERMISSION_GRANTED
             ShowDataTool.showLog("hasSpecialUsePermission: $hasSpecialUsePermission")
-
                 requestPermissions(
                     activity,
                     arrayOf(
@@ -92,37 +88,6 @@ object PngCanGo {
                 mainStart,
                 Intent(mainStart, PngTwoFService::class.java)
             )
-        }
-
-    }
-
-    fun startService2() {
-        stopService()
-        runnableService = object : Runnable {
-            override fun run() {
-                ShowDataTool.showLog("FebFiveFffService-startService---1-----$KEY_IS_SERVICE")
-                if (!KEY_IS_SERVICE && Build.VERSION.SDK_INT < 31) {
-                    ShowDataTool.showLog("FebFiveFffService-startService---2-----$KEY_IS_SERVICE")
-                    ContextCompat.startForegroundService(
-                        mainStart,
-                        Intent(mainStart, PngTwoFService::class.java)
-                    )
-                } else {
-                    ShowDataTool.showLog("FebFiveFffService-startService---3-----$KEY_IS_SERVICE")
-                    stopService()
-                    return
-                }
-
-                handlerService.postDelayed(this, 1020)
-            }
-        }
-        handlerService.postDelayed(runnableService!!, 1020)
-    }
-
-    private fun stopService() {
-        runnableService?.let {
-            handlerService.removeCallbacks(it)
-            runnableService = null
         }
     }
 
@@ -141,38 +106,5 @@ object PngCanGo {
             }
         }
         return null
-    }
-
-    fun getSupportedAbi(): String {
-        // 优先检测64位架构
-        for (abi in Build.SUPPORTED_64_BIT_ABIS) {
-            if (abi.startsWith("arm64") || abi.startsWith("x86_64")) {
-                return abi
-            }
-        }
-        for (abi in Build.SUPPORTED_32_BIT_ABIS) {
-            if (abi.startsWith("armeabi") || abi.startsWith("x86")) {
-                return abi
-            }
-        }
-        return Build.CPU_ABI
-    }
-
-    fun getAssetName(abi: String, isH5: Boolean): String {
-        // 根据架构选择加密文件名
-        if (abi.contains("64")) {
-            val assetName = if (isH5) {
-                "h8.txt"
-            } else {
-                "pngJia8.txt"
-            }
-            return assetName // 64位加密文件
-        }
-        val assetName = if (isH5) {
-            "h7.txt"
-        } else {
-            "pngJia7.txt"
-        }
-        return assetName // 32位加密文件
     }
 }

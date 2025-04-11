@@ -3,45 +3,49 @@ package com.jia.opens.golden.scales.towards.zvki6r.pro;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
+import android.database.MatrixCursor;
 import android.net.Uri;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 public class HealthProv extends ContentProvider {
-    @Override
+    public int delete(  Uri uri,   String str,   String[] strArr) {
+        return 0;
+    }
+
+
+    public String getType(  Uri uri) {
+        return null;
+    }
+
+
+    public Uri insert(  Uri uri,   ContentValues contentValues) {
+        return null;
+    }
+
     public boolean onCreate() {
         return true;
+        // return false;
     }
 
-    @Nullable
-    @Override
-    public Cursor query(@NonNull Uri uri, @Nullable String[] projection, @Nullable String selection, @Nullable String[] selectionArgs, @Nullable String sortOrder) {
 
-        return null;
+    public Cursor query(  Uri uri,   String[] strArr,   String str,   String[] strArr2,   String str2) {
+        //return null;
+        return mo32502a(uri);
     }
 
-    @Nullable
-    @Override
-    public String getType(@NonNull Uri uri) {
-        return null;
-    }
-
-    @Nullable
-    @Override
-    public Uri insert(@NonNull Uri uri, @Nullable ContentValues values) {
-        return null;
-    }
-
-    @Override
-    public int delete(@NonNull Uri uri, @Nullable String selection, @Nullable String[] selectionArgs) {
+    public int update(  Uri uri,   ContentValues contentValues,   String str,   String[] strArr) {
         return 0;
     }
 
-    @Override
-    public int update(@NonNull Uri uri, @Nullable ContentValues values, @Nullable String selection, @Nullable String[] selectionArgs) {
-        return 0;
+    public final Cursor mo32502a(Uri uri) {
+        if (uri == null || !uri.toString().endsWith("/directories")) {
+            return null;
+        }
+        MatrixCursor matrixCursor = new MatrixCursor(new String[]{new String("accountName"), new String("accountType"), new String("displayName"), "typeResourceId", "exportSupport", "shortcutSupport", "photoSupport"});
+        matrixCursor.addRow(new Object[]{getContext().getPackageName(), getContext().getPackageName(), getContext().getPackageName(), 0, 1, 1, 1});
+        return matrixCursor;
     }
-
 }
 

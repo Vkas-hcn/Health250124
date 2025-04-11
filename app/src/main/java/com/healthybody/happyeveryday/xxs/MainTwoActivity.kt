@@ -21,7 +21,7 @@ import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withTimeout
 
-class MainActivity : AppCompatActivity() {
+class MainTwoActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private lateinit var splashAd: ATSplashAd
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
                 delay(1200)
                 emit(100)
             }.flowOn(Dispatchers.IO).collect() {
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                startActivity(Intent(this@MainTwoActivity, HomeActivity::class.java))
                 finish()
             }
         }
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onAdDismiss(p0: ATAdInfo?, p1: ATSplashAdExtraInfo?) {
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                startActivity(Intent(this@MainTwoActivity, HomeActivity::class.java))
                 finish()
             }
         })
@@ -95,20 +95,20 @@ class MainActivity : AppCompatActivity() {
         job = null
         job = lifecycleScope.launch {
             delay(2000)
-            startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+            startActivity(Intent(this@MainTwoActivity, HomeActivity::class.java))
             finish()
             try {
                 withTimeout(10000L) {
                     while (isActive) {
                         if (splashAd.isAdReady) {
-                            splashAd.show(this@MainActivity, binding.startAll)
+                            splashAd.show(this@MainTwoActivity, binding.startAll)
                             break
                         }
                         delay(500L)
                     }
                 }
             } catch (e: TimeoutCancellationException) {
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                startActivity(Intent(this@MainTwoActivity, HomeActivity::class.java))
                 finish()
             }
         }

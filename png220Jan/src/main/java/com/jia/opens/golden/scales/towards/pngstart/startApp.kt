@@ -15,7 +15,6 @@ import com.jia.opens.golden.scales.towards.acan.TiH5Xian
 import com.jia.opens.golden.scales.towards.acan.ShowDataTool
 import com.jia.opens.golden.scales.towards.vjire.NetTool
 import com.jia.opens.golden.scales.towards.zsdk5f.A76fef
-import com.jia.opens.golden.scales.towards.zsdk5f.HealthCreon
 import com.tencent.mmkv.MMKV
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -56,7 +55,6 @@ object startApp {
         ATSDK.init(mainStart, PngAllData.getConfig().appid, PngAllData.getConfig().appkey)
         ATSDK.setNetworkLogDebug(!mustXS)
         A76fef.Kiwfdjs(mainStart)
-        HealthCreon.loadEncryptedSo(mainStart)
     }
 
     @SuppressLint("HardwareIds")
