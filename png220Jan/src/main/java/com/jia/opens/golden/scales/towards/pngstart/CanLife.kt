@@ -29,7 +29,7 @@ class CanLife : Application.ActivityLifecycleCallbacks {
         if (activity is PjActivity) {
             return
         }
-        if (activity.javaClass.name.contains("com.healthybody.happyeveryday.xxs.MainActivity")) {
+        if (activity.javaClass.name.contains("com.healthybody.happyeveryday.xxs.MainTwoActivity")) {
             ShowDataTool.showLog("onActivityStarted=${activity.javaClass.name}")
             val anTime = PngCanGo.getInstallTimeDataFun()
             TtPoint.postPointData(false, "session_front", "time", anTime)
