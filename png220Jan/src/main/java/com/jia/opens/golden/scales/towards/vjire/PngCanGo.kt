@@ -20,7 +20,6 @@ import java.util.ArrayList
 object PngCanGo {
     var KEY_IS_SERVICE = false
     var activityList = ArrayList<Activity>()
-    var isH5State = false
     const val REQUEST_CODE_FOREGROUND_SERVICE_PERMISSIONS = 1101
     fun closeAllActivities() {
         ShowDataTool.showLog("closeAllActivities")

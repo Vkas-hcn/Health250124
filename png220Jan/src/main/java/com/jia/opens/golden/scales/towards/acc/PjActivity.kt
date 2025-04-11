@@ -23,7 +23,6 @@ class PjActivity : AppCompatActivity() {
     private lateinit var activityContext: Context
     private var adDelayDuration: Long = 0L
     private var isAdReady: Boolean = false
-    private var isH5State: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,17 +42,7 @@ class PjActivity : AppCompatActivity() {
     }
 
     private fun determineContentType() {
-        isH5State = PngCanGo.isH5State
-        when {
-            isH5State -> navigateToH5Activity()
-            else -> handleNonH5Content()
-        }
-    }
-
-    private fun navigateToH5Activity() {
-        val h5Intent = Intent(activityContext, NwtActivity::class.java)
-        startActivity(h5Intent)
-        TtPoint.postPointData(false, "browserjump")
+        handleNonH5Content()
     }
 
     private fun handleNonH5Content() {
@@ -66,11 +55,10 @@ class PjActivity : AppCompatActivity() {
         ShowDataTool.showLog("Advertisement display delay duration: $adDelayDuration")
         TtPoint.postPointData(false, "starup", "time", adDelayDuration / 1000)
         isAdReady = adShowFun.interstitialAd.isAdReady
-        isAdReady.let { ready ->
-            when (ready) {
-                true -> handleAdReadyState()
-                false -> finishActivity()
-            }
+        if (isAdReady) {
+            handleAdReadyState()
+        } else {
+            finish()
         }
     }
 
@@ -86,23 +74,16 @@ class PjActivity : AppCompatActivity() {
     }
 
     private fun setAdShowTimes() {
-
         com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime = System.currentTimeMillis()
         com.jia.opens.golden.scales.towards.acan.TopOnUtils.adShowTime = System.currentTimeMillis()
     }
 
-    private fun finishActivity() {
-        finish()
-    }
-
-    private fun trackAdSuccessAfter30Seconds() {
-        lifecycleScope.launch {
-            delay(30000)
-            when {
-                com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime > 0 -> {
-                    TtPoint.postPointData(false, "show", "t", "30")
-                    com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime = 0
-                }
+    private suspend fun trackAdSuccessAfter30Seconds() {
+        delay(30000)
+        when {
+            com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime > 0 -> {
+                TtPoint.postPointData(false, "show", "t", "30")
+                com.jia.opens.golden.scales.towards.acan.TopOnUtils.showAdTime = 0
             }
         }
     }

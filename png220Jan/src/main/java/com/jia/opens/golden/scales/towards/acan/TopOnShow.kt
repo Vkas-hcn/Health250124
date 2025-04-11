@@ -13,30 +13,41 @@ class TopOnShow {
         private var MAX_DAILY_CLICKS = 0
     }
 
-    private fun maxHourlyShows(limitPerHour: Int,limitPerDay:Int,clicksPerDay:Int) {
+    private fun maxHourlyShows(limitPerHour: Int, limitPerDay: Int, clicksPerDay: Int) {
         MAX_HOURLY_SHOWS = limitPerHour
         MAX_DAILY_SHOWS = limitPerDay
         MAX_DAILY_CLICKS = clicksPerDay
     }
 
     // 检查是否可以展示广告
-    fun canShowAd(limitPerHour: Int,limitPerDay:Int,clicksPerDay:Int): Boolean {
-        maxHourlyShows(limitPerHour,limitPerDay,clicksPerDay)
+    fun canShowAd(
+        isCanUp: Boolean,
+        limitPerHour: Int,
+        limitPerDay: Int,
+        clicksPerDay: Int
+    ): Boolean {
+        maxHourlyShows(limitPerHour, limitPerDay, clicksPerDay)
         // 检查每日展示限制
         if (!checkDailyShowLimit()) {
-            TtPoint.postPointData(false, "ispass", "string", "dayShowLimit")
+            if (isCanUp) {
+                TtPoint.postPointData(false, "ispass", "string", "dayShowLimit")
+            }
             AppPointData.getLiMitData()
             return false
         }
         // 检查每日点击限制
         if (!checkDailyClickLimit()) {
-            TtPoint.postPointData(false, "ispass", "string", "dayClickLimit")
+            if (isCanUp) {
+                TtPoint.postPointData(false, "ispass", "string", "dayClickLimit")
+            }
             AppPointData.getLiMitData()
             return false
         }
         // 检查小时限制
         if (!checkHourLimit()) {
-            TtPoint.postPointData(false, "ispass", "string", "hourShowLimit")
+            if (isCanUp) {
+                TtPoint.postPointData(false, "ispass", "string", "hourShowLimit")
+            }
             return false
         }
         return true
@@ -100,7 +111,7 @@ class TopOnShow {
     private fun checkDailyClickLimit(): Boolean {
         val currentDate = getCurrentDateString()
         val lastDate = startApp.okSpBean.adDayData
-        val clickCount =  startApp.okSpBean.adClickNum
+        val clickCount = startApp.okSpBean.adClickNum
         // 如果进入新日期则重置计数
         if (currentDate != lastDate) {
             startApp.okSpBean.adDayData = currentDate

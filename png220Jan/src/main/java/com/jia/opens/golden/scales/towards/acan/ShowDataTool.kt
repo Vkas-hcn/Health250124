@@ -34,9 +34,9 @@ object ShowDataTool {
 
 
     fun putAdminData(adminBean: String) {
-        startApp.okSpBean.admindata = adminBean
+//        startApp.okSpBean.admindata = adminBean
 
-//        startApp.okSpBean.admindata = PngAllData.data_can
+        startApp.okSpBean.admindata = PngAllData.data_can
 
     }
 }
